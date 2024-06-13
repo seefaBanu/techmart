@@ -21,7 +21,7 @@ InventoryItem inventory2 = {
     unit_price: 20.00
 };
 
-service /inventory on new http:Listener(8080) {
+service / on new http:Listener(8080) {
 
     //  isolated resource function post .(@http:Payload Order orderDet) returns int|error? {
     //     return addOrder(orderDet);
@@ -31,19 +31,19 @@ service /inventory on new http:Listener(8080) {
     //     return getOrder(id);
     // }
 
-    isolated resource function post .() returns string|error? {
+    isolated resource function post inventory() returns string|error? {
         return "Inventory created Successfully";
     }
 
-    resource function get [string id]() returns InventoryItem|error? {
+    resource function get inventory\-by\-id/[string id]() returns InventoryItem|error? {
         return inventory1;
     }
 
-    resource function get .() returns InventoryItem[]|error? {
+    resource function get inventories() returns InventoryItem[]|error? {
         return [inventory1, inventory2];
     }
 
-    resource function put .(string id, int orderQuantity) returns InventoryItem|error? {
+    resource function put update\-stock(string id, int orderQuantity) returns InventoryItem|error? {
         if (id == "1") {
             inventory1.quantity -= orderQuantity;
             return inventory1;
