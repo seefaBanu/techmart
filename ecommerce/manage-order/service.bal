@@ -1,6 +1,6 @@
 import ballerina/http;
 
-service / on new http:Listener(8080) {
+service /techchmart on new http:Listener(8080) {
 
     //  isolated resource function post .(@http:Payload Order orderDet) returns int|error? {
     //     return addOrder(orderDet);
