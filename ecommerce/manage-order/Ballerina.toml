@@ -6,11 +6,3 @@ distribution = "2201.8.6"
 
 [build-options]
 observabilityIncluded = true
-
-[[platform.java11.dependency]]
-groupId = "com.microsoft.sqlserver"
-artifactId = "mssql-jdbc"
-version = "11.2.3.jre17"
-
-[[platform.java11.dependency]]
-path = "C:/Users/Seefa Banu/.m2/repository/com/microsoft/sqlserver/mssql-jdbc/11.2.3.jre17/mssql-jdbc-11.2.3.jre17.jar"
